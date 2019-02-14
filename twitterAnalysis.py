@@ -6,10 +6,12 @@ Created on Tue Feb  5 09:11:40 2019
 """
 
 from twitter_keys_paul import consumer_key, consumer_secret, access_token, access_secret
+from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import tweepy
 import pickle
 import numpy as np
+
 
 #Setting up Authentication
 
@@ -129,37 +131,46 @@ plt.show()
 
 #Sentimental analysis on 3 different twitter accounts
 
+import nltk
+nltk.download('vader_lexicon')
+
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+analyzer = SentimentIntensityAnalyzer()
+
+#Functions that does the sentimental analysis and returns postives, neutrals, negatives 
+def sentiments(tweets):
+    texts = [tweet.text for tweet in tweets]
+    sents = [analyzer.polarity_scores(t) for t in texts]
+    pos_x = [s['pos'] for s in sents]
+    neu_y = [s['neu'] for s in sents]
+    neg_z = [s['neg'] for s in sents]
+    return pos_x, neu_y, neg_z
+
+#plotting the sentimental analysis in a 3D graph
+    
+fig = plt.figure()
+ax = fig.add_subplot(111, projection = '3d')
+
+#Messi sentiment anaylysis 
+messi_pos_x, messi_neu_y, messi_neg_z = sentiments(messi_tweets)
+
+#Ronaldo sentiment analysis
+ronaldo_pos_x, ronaldo_neu_y, ronaldo_neg_z = sentiments(ronaldo_tweets)
+
+#Neymer sentiment analysis
+neymer_pos_x, neymer_neu_y, neymer_neg_z = sentiments(neymer_tweets)
+
+ax.scatter(messi_pos_x, messi_neu_y, messi_neg_z, c ='green', marker='o')
+ax.scatter(ronaldo_pos_x, ronaldo_neu_y, ronaldo_neg_z, c ='blue', marker='^')
+ax.scatter(neymer_pos_x, neymer_neu_y, neymer_neg_z, c ='red', marker='o')
 
 
+ax.set_xlabel('Positive')
+ax.set_ylabel('Neutral')
+ax.set_zlabel('Negative')
+  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+plt.show()
 
 
 
