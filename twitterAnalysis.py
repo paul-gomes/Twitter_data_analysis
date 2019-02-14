@@ -9,6 +9,7 @@ from twitter_keys_paul import consumer_key, consumer_secret, access_token, acces
 import matplotlib.pyplot as plt
 import tweepy
 import pickle
+import numpy as np
 
 #Setting up Authentication
 
@@ -85,9 +86,48 @@ with open('messi.pkl', 'rb') as f:
         
 for tweet in messi_tweets:
     messi_lexical_diversity.append(lexical_diversity(tweet.text))
+    
+#ronaldo's lexical diversity
+with open('ronaldo.pkl', 'rb') as f:
+    ronaldo_tweets  = pickle.load(f)
+       
+for tweet in ronaldo_tweets:
+    ronaldo_lexical_diversity.append(lexical_diversity(tweet.text))
+
+#neymer's lexical diversity
+
+with open('neymer.pkl', 'rb') as f:
+    neymer_tweets  = pickle.load(f)
+        
+for tweet in neymer_tweets:
+    neymer_lexical_diversity.append(lexical_diversity(tweet.text))  
+    
+
+#plotting the lexical diversity of messi, ronaldo, neymer
 
 
-print(messi_lexical_diversity)
+plt.subplot(1,3, 1)
+plt.plot(messi_lexical_diversity, color='green')
+plt.xlabel('Each tweets')
+plt.ylabel('Lexical Diversity in percentage')
+plt.title('Lexical diversity in percentage for each tweet', loc='center')
+
+
+plt.subplot(1,3, 2)
+plt.plot(ronaldo_lexical_diversity, color='blue')
+plt.xlabel('Each tweets')
+plt.ylabel('Lexical Diversity in percentage')
+
+plt.subplot(1,3, 3)
+plt.plot(neymer_lexical_diversity, color='red')
+plt.xlabel('Each tweets')
+plt.ylabel('Lexical Diversity in percentage')
+
+
+plt.show()
+
+
+#Sentimental analysis on 3 different twitter accounts
 
 
 
