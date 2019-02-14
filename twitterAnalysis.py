@@ -6,7 +6,9 @@ Created on Tue Feb  5 09:11:40 2019
 """
 
 from twitter_keys_paul import consumer_key, consumer_secret, access_token, access_secret
+import matplotlib.pyplot as plt
 import tweepy
+import pickle
 
 #Setting up Authentication
 
@@ -15,8 +17,144 @@ auth.set_access_token(access_token, access_secret)
 
 api = tweepy.API(auth)
 
+'''
+To get more than 20 statues, we would have to do pagination.
+In order to perform pagination we must supply a page/cursor 
+parameter with each of our requests. Cursor object makes it 
+easy to handle all the pagination work behind the scene.
+'''
 
-#Getting my homeline data to check authentiation is established 
-my_tweets = api.home_timeline()
-for tweet in my_tweets:
-    print(tweet.author.screen_name)
+#pickling the tweets for 3 different accounts - Messi, Ronaldo, Neymer
+
+'''
+#caching tweets for messi
+messi_tweet_to_cache = []
+
+for status in tweepy.Cursor(api.user_timeline, id="imessi").items(3000):
+    messi_tweet_to_cache.append(status)     
+     
+with open('messi.pkl', 'wb') as f:
+    pickle.dump(messi_tweet_to_cache, f)
+    
+
+#caching tweets for ronaldo    
+ronaldo_tweet_to_cache = []
+
+for status in tweepy.Cursor(api.user_timeline, id="Cristiano").items(3000):
+    ronaldo_tweet_to_cache.append(status)     
+     
+with open('ronaldo.pkl', 'wb') as f:
+    pickle.dump(ronaldo_tweet_to_cache, f)
+
+print(len(ronaldo_tweet_to_cache))
+    
+
+   
+#caching tweets for neymer
+neymer_tweet_to_cache = []
+
+for status in tweepy.Cursor(api.user_timeline, id="neymarjr").items(3000):
+    neymer_tweet_to_cache.append(status)     
+     
+with open('neymer.pkl', 'wb') as f:
+    pickle.dump(neymer_tweet_to_cache, f)
+    
+print(len(neymer_tweet_to_cache))
+    
+''' 
+
+#Lexical diversity calculation for 3 different twitter accounts
+
+'''
+Lexical diversity is measure of how many different words that are used in a text.
+Here I will calculate lexical diversity in 3 different twitter accounts.
+'''
+#Lexical diversity for messi
+
+def lexical_diversity(text):
+    return round(100*len(set(text))/ len(text), 2)
+
+messi_lexical_diversity = []
+ronaldo_lexical_diversity = []
+neymer_lexical_diversity = []
+
+#messi's lexical diversity
+#loading from pickel cashed file 
+with open('messi.pkl', 'rb') as f:
+    messi_tweets  = pickle.load(f)
+        
+for tweet in messi_tweets:
+    messi_lexical_diversity.append(lexical_diversity(tweet.text))
+
+
+print(messi_lexical_diversity)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+
+#CALCULATING TWITTER RATIO FOR MESSI, RONALDO, NEYMER
+
+
+
+
+
+
+for status in tweepy.Cursor(api.user_timeline, id="imessi").items(1):
+    print(status.text)
+    retweets = status.retweet_count
+    likes = status.favorite_count
+    replies_count = 0
+    status_id = status.id
+    
+    # fetching all the reply
+    for reply in tweepy.Cursor(api.search, q='@imessi', since_id = status_id).items():
+        print(reply.text)
+        if hasattr(reply, 'in_reply_to_status_id_str'):
+            if (reply.in_reply_to_status_id_str == status.id_str):
+                #print(reply.author.screen_name, "", reply.text, )
+                print("-------------------------------------")
+                replies_count += 1
+                
+    print(retweets, likes, replies_count) 
+        
+    print("-------------------------------------")
+    
+'''
