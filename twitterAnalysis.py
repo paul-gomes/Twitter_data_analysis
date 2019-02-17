@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Feb  5 09:11:40 2019
-
 @author: Anik Paul Gomes
+
 """
 
 from twitter_keys_paul import consumer_key, consumer_secret, access_token, access_secret
@@ -174,20 +174,13 @@ plt.show()
 
 
 
+#Device and client used by twitter accounts - Messi, Ronaldo, Neymer
 
 
 
-
+#Calculating twitter ration for twitter accounts -Messi, Ronaldo, Neymer
 
 '''
-
-#CALCULATING TWITTER RATIO FOR MESSI, RONALDO, NEYMER
-
-
-
-
-
-
 for status in tweepy.Cursor(api.user_timeline, id="imessi").items(1):
     print(status.text)
     retweets = status.retweet_count
