@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import tweepy
 import pickle
 import numpy as np
-
+import re
 
 #Setting up Authentication
 
@@ -171,6 +171,70 @@ ax.set_zlabel('Negative')
   
 
 plt.show()
+
+#Basic frequency distribution from words in tweets
+from collections import Counter
+
+
+#Messi's word frequency distribution 
+
+#Creates 2D list. List of tweets of words.
+messi_words = [tweet.text.split() for tweet in messi_tweets] 
+
+#converting list of list into one list
+messi_words = [y for x in messi_words
+                   for y in x]
+#Getting rid of special characters
+messi_words = list(map(lambda x: re.sub("[0-9\.?@#%*,!&:/…-]", "", x).lower(), messi_words))
+#Getting rid of empty string
+messi_words = list(filter(None, messi_words))
+                                          
+#Counting the number of each words using Counter method
+messi_word_frequency = Counter(messi_words)  
+
+
+#Ronaldo's word frequency distribution 
+
+#Creates 2D list. List of tweets of words.
+ronaldo_words = [tweet.text.split() for tweet in ronaldo_tweets] 
+
+#converting list of list into one list
+ronaldo_words = [y for x in ronaldo_words
+                   for y in x]
+#Getting rid of special characters
+ronaldo_words = list(map(lambda x: re.sub("[0-9\.?@#%*,!&:/…-]", "", x).lower(), ronaldo_words))
+#Getting rid of empty string
+ronaldo_words = list(filter(None, ronaldo_words))
+                                          
+#Counting the number of each words using Counter method
+ronaldo_word_frequency = Counter(ronaldo_words)  
+
+
+
+
+#Neymer's word frequency distribution 
+
+#Creates 2D list. List of tweets of words.
+neymer_words = [tweet.text.split() for tweet in neymer_tweets] 
+
+#converting list of list into one list
+neymer_words = [y for x in neymer_words
+                   for y in x]
+#Getting rid of special characters
+neymer_words = list(map(lambda x: re.sub("[0-9\.?@#%*,!&:/…-]", "", x).lower(), neymer_words))
+#Getting rid of empty string
+neymer_words = list(filter(None, neymer_words))
+                                          
+#Counting the number of each words using Counter method
+neymer_word_frequency = Counter(neymer_words)  
+
+print(neymer_word_frequency)
+
+#Plotting Word Frequency
+
+
+
+
 
 
 
