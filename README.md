@@ -15,9 +15,10 @@ In Twitter, vast variety of people publicly post contents. Just as in real life,
 
 #### Lexical Diversity
 Lexical diversity calculates how many different words that are used in the text.</br>
-![Lexical diversity of Messi, Ronaldo, Neymer](/image/lexical_diversity.png)
-    Green - Messi, Blue - Ronaldo, Red - Neymer
-Lexical diversity = unique words/ total words. The more the lexical diversity is the more unique words have been used by the user. Y-axis is the lexical diversity in percentage for each tweets in X-axis.
+![Lexical diversity of Messi, Ronaldo, Neymer](/image/lexical_diversity.PNG)</br>
+
+    Green - Messi, Blue - Ronaldo, Red - Neymer. </br>
+Lexical diversity = unique words/ total words. The more the lexical diversity is the more unique words have been used by the user. Y-axis is the lexical diversity in percentage for each tweets in X-axis. For each users, the number of tweets are 150. It looks like, Ronaldo and Neymer have ups and downs(quite a variations) in their lexical diversity. However, Ronaldo have more tweets with high lexical diversity than Neymer. On the other hand, Messi does not have very much tweets with high lexical diversity. Although there is lot of variations in the outcome, the highest peak is the almost the same for each usrs. 
 
 
 
