@@ -23,7 +23,6 @@ Lexical diversity = unique words/ total words. The more the lexical diversity is
 #### Senimental Analysis
 | ![Sentimental Angle1](/image/sentimental_angle1.png) | ![sentimental Angle2](/image/sentimental_angle2.png) | ![Sentimental Angle3.png](/image/sentimental_angle3.png) | ![Sentimental Angle4.png](/image/sentimental_angle4.png) |
 |-----------------------------------------------------|------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
-</br>
     Green - Messi, Blue - Ronaldo, Red - Neymer.
 
 
