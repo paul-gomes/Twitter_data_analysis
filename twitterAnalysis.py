@@ -33,17 +33,17 @@ easy to handle all the pagination work behind the scene.
 #caching tweets for messi
 messi_tweet_to_cache = []
 
-for status in tweepy.Cursor(api.user_timeline, id="imessi").items(3000):
+for status in tweepy.Cursor(api.user_timeline, id="imessi").items(150):
     messi_tweet_to_cache.append(status)     
      
 with open('messi.pkl', 'wb') as f:
     pickle.dump(messi_tweet_to_cache, f)
     
-
+print(len(messi_tweet_to_cache))
 #caching tweets for ronaldo    
 ronaldo_tweet_to_cache = []
 
-for status in tweepy.Cursor(api.user_timeline, id="Cristiano").items(3000):
+for status in tweepy.Cursor(api.user_timeline, id="Cristiano").items(150):
     ronaldo_tweet_to_cache.append(status)     
      
 with open('ronaldo.pkl', 'wb') as f:
@@ -56,15 +56,15 @@ print(len(ronaldo_tweet_to_cache))
 #caching tweets for neymer
 neymer_tweet_to_cache = []
 
-for status in tweepy.Cursor(api.user_timeline, id="neymarjr").items(3000):
+for status in tweepy.Cursor(api.user_timeline, id="neymarjr").items(150):
     neymer_tweet_to_cache.append(status)     
      
 with open('neymer.pkl', 'wb') as f:
     pickle.dump(neymer_tweet_to_cache, f)
     
 print(len(neymer_tweet_to_cache))
-    
-''' 
+'''   
+ 
 
 #Lexical diversity calculation for 3 different twitter accounts
 

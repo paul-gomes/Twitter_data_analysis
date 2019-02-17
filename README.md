@@ -14,7 +14,7 @@ In Twitter, vast variety of people publicly post contents. Just as in real life,
 |            Messi           |             Ronaldo            |            Neymer            |
 
 #### Lexical Diversity
-Lexical diversity calculates how many different words that are used in the text.\s\s 
+Lexical diversity calculates how many different words that are used in the text.</br>
 ![Lexical diversity of Messi, Ronaldo, Neymer](/image/lexical_diversity.png)
     Green - Messi, Blue - Ronaldo, Red - Neymer
 Lexical diversity = unique words/ total words. The more the lexical diversity is the more unique words have been used by the user. Y-axis is the lexical diversity in percentage for each tweets in X-axis.
