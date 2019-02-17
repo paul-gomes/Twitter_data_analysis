@@ -21,7 +21,7 @@ Lexical diversity calculates how many different words that are used in the text.
 Lexical diversity = unique words/ total words. The more the lexical diversity is the more unique words have been used by the user. Y-axis is the lexical diversity in percentage for each tweets in X-axis. For each users, the number of tweets are 150. It looks like, Ronaldo and Neymer have ups and downs(quite a variations) in their lexical diversity. However, Ronaldo have more tweets with high lexical diversity than Neymer. On the other hand, Messi does not have very much tweets with high lexical diversity. Although there is lot of variations in the outcome, the highest peak is the almost the same for each users. 
 
 #### Senimental Analysis
-| ![Sentimental Angle1](/image/sentimental_angle1.png | ![sentimental Angle2](/image/sentimental_angle2.png) | ![Sentimental Angle3.png](/image/sentimental_angle3.png) | ![Sentimental Angle4.png](/image/sentimental_angle4.png) |
+| ![Sentimental Angle1](/image/sentimental_angle1.png) | ![sentimental Angle2](/image/sentimental_angle2.png) | ![Sentimental Angle3.png](/image/sentimental_angle3.png) | ![Sentimental Angle4.png](/image/sentimental_angle4.png) |
 |-----------------------------------------------------|------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
 
 
