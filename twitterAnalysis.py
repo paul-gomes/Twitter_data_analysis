@@ -190,7 +190,12 @@ messi_words = list(map(lambda x: re.sub("[0-9\.?@#%*,!&:/…-]", "", x).lower(),
 messi_words = list(filter(None, messi_words))
                                           
 #Counting the number of each words using Counter method
-messi_word_frequency = Counter(messi_words)  
+messi_word_frequency = Counter(messi_words) 
+
+#top 10 words
+messi_word_frequency_top10 = messi_word_frequency.most_common()[:10]
+messi_word_frequency_top10 = dict(messi_word_frequency_top10)
+
 
 
 #Ronaldo's word frequency distribution 
@@ -209,6 +214,9 @@ ronaldo_words = list(filter(None, ronaldo_words))
 #Counting the number of each words using Counter method
 ronaldo_word_frequency = Counter(ronaldo_words)  
 
+#Top 10 words
+ronaldo_word_frequency_top10 = ronaldo_word_frequency.most_common()[:10]
+ronaldo_word_frequency_top10 = dict(ronaldo_word_frequency_top10)
 
 
 
@@ -226,15 +234,33 @@ neymer_words = list(map(lambda x: re.sub("[0-9\.?@#%*,!&:/…-]", "", x).lower()
 neymer_words = list(filter(None, neymer_words))
                                           
 #Counting the number of each words using Counter method
-neymer_word_frequency = Counter(neymer_words)  
+neymer_word_frequency = Counter(neymer_words)
 
-print(neymer_word_frequency)
+#Top 10 words
+neymer_word_frequency_top10 = neymer_word_frequency.most_common()[:10]
+neymer_word_frequency_top10 = dict(neymer_word_frequency_top10)
 
-#Plotting Word Frequency
+#plotting the lexical diversity of messi, ronaldo, neymer
+
+#plotting messi
+
+figureM, axM = plt.subplots()
+axM.scatter(list(messi_word_frequency_top10.keys()), list(messi_word_frequency_top10.values()))
+figureM.suptitle('Messi Word Frequency (Top 10)')
+
+#plotting Ronaldo
+figureR, axR = plt.subplots()
+axR.scatter(list(ronaldo_word_frequency_top10.keys()), list(ronaldo_word_frequency_top10.values()))
+figureR.suptitle('Ronaldo Word Frequency (Top 10)')
+
+#plotting Neymer
+figureN, axN = plt.subplots()
+axN.scatter(list(neymer_word_frequency_top10.keys()), list(neymer_word_frequency_top10.values()))
+figureN.suptitle('Neymer Word Frequency (Top 10)')
 
 
 
-
+plt.show()
 
 
 
