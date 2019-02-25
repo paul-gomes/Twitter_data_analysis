@@ -42,14 +42,14 @@ print(neymer_tweet_source)
 #plotting messi
 
 figureM, axM = plt.subplots()
-axM.bar(list(messi_tweet_source.keys()), list(messi_tweet_source.values()), color="Green")
+axM.bar(list(messi_tweet_source.keys()), list(messi_tweet_source.values()),width=0.5, color="Green")
 figureM.suptitle('Messi Tweet Source Frequency')
 axM.set_xlabel('Tweet Source')
 axM.set_ylabel('Frequency')
 
 #plotting Ronaldo
 figureR, axR = plt.subplots()
-axR.bar(list(ronaldo_tweet_source.keys()), list(ronaldo_tweet_source.values()), color="Blue")
+axR.bar(list(ronaldo_tweet_source.keys()), list(ronaldo_tweet_source.values()),width=0.5, color="Blue")
 figureR.suptitle('Ronaldo Tweet Source Frequency')
 axR.set_xlabel('Tweet Source')
 axR.set_ylabel('Frequency')
@@ -57,7 +57,7 @@ axR.set_ylabel('Frequency')
 
 #plotting Neymer
 figureN, axN = plt.subplots()
-axN.bar(list(neymer_tweet_source.keys()), list(neymer_tweet_source.values()), color="Red")
+axN.bar(list(neymer_tweet_source.keys()), list(neymer_tweet_source.values()),width=0.5, color="Red")
 figureN.suptitle('Neymer Tweet Source Frequency')
 axN.set_xlabel('Tweet Source')
 axN.set_ylabel('Frequency')
