@@ -25,6 +25,10 @@ Lexical diversity = unique words/ total words. The more the lexical diversity is
 |-----------------------------------------------------|------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
     Green - Messi, Blue - Ronaldo, Red - Neymer.
 
+Sentiment analysis is categorizing or identifying opinions inorder to determine writer's attitude towards a topic. In my analysis, I have done sentiment analysis on Messi, Ronaldo, and Neymer's tweets. According to my analysis, most of their tweets can be categorized as neutral, however, Messi has more negative tweets than Ronaldo and Neymer. 
+
+#### Word Frequency Analysis
+
 
 
 
