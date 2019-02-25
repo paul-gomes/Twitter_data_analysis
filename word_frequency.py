@@ -87,7 +87,7 @@ neymer_word_frequency = Counter(neymer_words)
 neymer_word_frequency_top10 = neymer_word_frequency.most_common()[:10]
 neymer_word_frequency_top10 = dict(neymer_word_frequency_top10)
 
-#plotting the lexical diversity of messi, ronaldo, neymer
+#plotting the word frequency of messi, ronaldo, neymer
 
 #plotting messi
 
