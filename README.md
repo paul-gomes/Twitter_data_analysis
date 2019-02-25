@@ -29,6 +29,10 @@ Sentiment analysis is categorizing or identifying opinions inorder to determine 
 
 #### Word Frequency Analysis
 
+| ![Messi](/image/word_frequency_messi.PNG) | ![Ronaldo](/image/word_frequency_ronaldo.PNG) | ![Neymer](/image/word_frequency_neymer.PNG) |
+|----------------------------|--------------------------------|------------------------------|
+| Messi Word Frequency       |Ronaldo Word Frequency          |Neymer Word Frequency           |
+
 
 
 
