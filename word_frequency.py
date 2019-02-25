@@ -94,16 +94,24 @@ neymer_word_frequency_top10 = dict(neymer_word_frequency_top10)
 figureM, axM = plt.subplots()
 axM.scatter(list(messi_word_frequency_top10.keys()), list(messi_word_frequency_top10.values()))
 figureM.suptitle('Messi Word Frequency (Top 10)')
+axM.set_xlabel('Words')
+axM.set_ylabel('Frequency')
 
 #plotting Ronaldo
 figureR, axR = plt.subplots()
 axR.scatter(list(ronaldo_word_frequency_top10.keys()), list(ronaldo_word_frequency_top10.values()))
 figureR.suptitle('Ronaldo Word Frequency (Top 10)')
+axR.set_xlabel('Words')
+axR.set_ylabel('Frequency')
+
 
 #plotting Neymer
 figureN, axN = plt.subplots()
 axN.scatter(list(neymer_word_frequency_top10.keys()), list(neymer_word_frequency_top10.values()))
 figureN.suptitle('Neymer Word Frequency (Top 10)')
+axN.set_xlabel('Words')
+axN.set_ylabel('Frequency')
+
 
 
 
