@@ -6,12 +6,9 @@ Created on Tue Feb  5 09:11:40 2019
 """
 
 from twitter_keys_paul import consumer_key, consumer_secret, access_token, access_secret
-from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
 import tweepy
 import pickle
-import numpy as np
-import re
+
 
 #Setting up Authentication
 
@@ -29,14 +26,14 @@ easy to handle all the pagination work behind the scene.
 
 #pickling the tweets for 3 different accounts - Messi, Ronaldo, Neymer
 
-'''
+
 #caching tweets for messi
 messi_tweet_to_cache = []
 
 for status in tweepy.Cursor(api.user_timeline, id="imessi").items(150):
     messi_tweet_to_cache.append(status)     
      
-with open('messi.pkl', 'wb') as f:
+with open('pickles/messi.pkl', 'wb') as f:
     pickle.dump(messi_tweet_to_cache, f)
     
 print(len(messi_tweet_to_cache))
@@ -46,7 +43,7 @@ ronaldo_tweet_to_cache = []
 for status in tweepy.Cursor(api.user_timeline, id="Cristiano").items(150):
     ronaldo_tweet_to_cache.append(status)     
      
-with open('ronaldo.pkl', 'wb') as f:
+with open('pickles/ronaldo.pkl', 'wb') as f:
     pickle.dump(ronaldo_tweet_to_cache, f)
 
 print(len(ronaldo_tweet_to_cache))
@@ -59,11 +56,11 @@ neymer_tweet_to_cache = []
 for status in tweepy.Cursor(api.user_timeline, id="neymarjr").items(150):
     neymer_tweet_to_cache.append(status)     
      
-with open('neymer.pkl', 'wb') as f:
+with open('pickles/neymer.pkl', 'wb') as f:
     pickle.dump(neymer_tweet_to_cache, f)
     
 print(len(neymer_tweet_to_cache))
-'''   
+  
  
 
 

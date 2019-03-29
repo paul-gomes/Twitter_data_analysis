@@ -24,14 +24,14 @@ neymer_lexical_diversity = []
 
 #messi's lexical diversity
 #loading from pickel cashed file 
-with open('messi.pkl', 'rb') as f:
+with open('pickles/messi.pkl', 'rb') as f:
     messi_tweets  = pickle.load(f)
         
 for tweet in messi_tweets:
     messi_lexical_diversity.append(lexical_diversity(tweet.text))
     
 #ronaldo's lexical diversity
-with open('ronaldo.pkl', 'rb') as f:
+with open('pickles/ronaldo.pkl', 'rb') as f:
     ronaldo_tweets  = pickle.load(f)
        
 for tweet in ronaldo_tweets:
@@ -39,7 +39,7 @@ for tweet in ronaldo_tweets:
 
 #neymer's lexical diversity
 
-with open('neymer.pkl', 'rb') as f:
+with open('pickles/neymer.pkl', 'rb') as f:
     neymer_tweets  = pickle.load(f)
         
 for tweet in neymer_tweets:

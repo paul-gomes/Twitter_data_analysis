@@ -12,18 +12,17 @@ import numpy as np
 from PIL import Image
 from nltk.corpus import stopwords 
 from wordcloud import WordCloud
-from IPython.display import Image as im
 
 #Basic frequency distribution from words in tweets
 #loading from pickel cashed file 
-with open('messi.pkl', 'rb') as f:
+with open('pickles/messi.pkl', 'rb') as f:
     messi_tweets  = pickle.load(f)
     
     
-with open('ronaldo.pkl', 'rb') as f:
+with open('pickles/ronaldo.pkl', 'rb') as f:
     ronaldo_tweets  = pickle.load(f)
     
-with open('neymer.pkl', 'rb') as f:
+with open('pickles/neymer.pkl', 'rb') as f:
     neymer_tweets  = pickle.load(f)
     
 
