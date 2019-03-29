@@ -41,6 +41,9 @@ Messi's account tweeted from 3 different client - Twitter Web Client, Twitter We
 |----------------------------|--------------------------------|------------------------------|
 | Messi Word Frequency       |Ronaldo Word Frequency          |Neymer Word Frequency           |
 
+#### Word Cloud
 
-
+| ![Messi](/image/word_cloud_messi.PNG) | ![Ronaldo](/image/word_cloud_ronaldo.PNG) | ![Neymer](/image/word_cloud_neymer.PNG) |
+|----------------------------|--------------------------------|------------------------------|
+| Messi Word Cloud       |Ronaldo Word Cloud          |Neymer Word Cloud          |
 
