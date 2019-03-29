@@ -16,6 +16,7 @@ import nltk
 nltk.download('vader_lexicon')
 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from mpl_toolkits.mplot3d import Axes3D
 analyzer = SentimentIntensityAnalyzer()
 
 
