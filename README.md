@@ -38,6 +38,7 @@ Messi's account tweeted from 3 different client - Twitter Web Client, Twitter We
 #### Tweet Source Analysis
 ![Average Twitter Ratio](/image/average_twitter_ration.PNG)
 
+According to my findings, Messi has better average twitter ratio (11.055). Ronaldo has very low average twitter ratio of 1.363, whereas, Neymer has average twitter ratio of 3.804.
 
 #### Word Frequency Analysis
 
