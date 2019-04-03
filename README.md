@@ -35,6 +35,10 @@ Sentiment analysis is categorizing or identifying opinions inorder to determine 
 
 Messi's account tweeted from 3 different client - Twitter Web Client, Twitter Web App, Twitter for Android. Most of his tweet is from Twitter Web Client. Ronaldo's account also tweeted from 3 differnt account - Twitter for iPhone, Twitter Media Studio, Twitter Web Client, however, most of his tweet is from iPhone. On the other hand, Neymer's tweeted from 5 different client. Most of his tweets from iphone. Interestingly enough, neymer tweeted from iphone and android, safe to assume he either owns both iphone and android phone, or this account has been handled by more than one person.
 
+#### Tweet Source Analysis
+![Average Twitter Ratio](/image/average_twitter_ration.PNG)
+
+
 #### Word Frequency Analysis
 
 | ![Messi](/image/word_frequency_messi.PNG) | ![Ronaldo](/image/word_frequency_ronaldo.PNG) | ![Neymer](/image/word_frequency_neymer.PNG) |
