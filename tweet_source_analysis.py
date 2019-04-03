@@ -16,6 +16,52 @@ def find_client(tweets):
     return dict(Counter(tweet_source))
 
 
+#Functions that adds labels at the end of each bar in a bar chart
+def add_value_labels(ax, spacing=5):
+    """Add labels to the end of each bar in a bar chart.
+
+    Arguments:
+        ax (matplotlib.axes.Axes): The matplotlib object containing the axes
+            of the plot to annotate.
+        spacing (int): The distance between the labels and the bars.
+    """
+
+    # For each bar: Place a label
+    for rect in ax.patches:
+        # Get X and Y placement of label from rect.
+        y_value = rect.get_height()
+        x_value = rect.get_x() + rect.get_width() / 2
+
+        # Number of points between bar and label. Change to your liking.
+        space = spacing
+        # Vertical alignment for positive values
+        va = 'bottom'
+
+        # If value of bar is negative: Place label below bar
+        if y_value < 0:
+            # Invert space to place label below
+            space *= -1
+            # Vertically align label at top
+            va = 'top'
+
+        # Use Y value as label and format number with one decimal place
+        label = "{:.3f}".format(y_value)
+
+        # Create annotation
+        ax.annotate(
+            label,                      # Use `label` as label
+            (x_value, y_value),         # Place label at end of the bar
+            xytext=(0, space),          # Vertically shift label by `space`
+            textcoords="offset points", # Interpret `xytext` as offset in points
+            ha='center',                # Horizontally center label
+            va=va)                      # Vertically align label differently for
+                                        # positive and negative values.
+
+
+
+
+
+
 
 
 #loading from pickel cashed file 
@@ -46,6 +92,7 @@ axM.bar(list(messi_tweet_source.keys()), list(messi_tweet_source.values()),width
 figureM.suptitle('Messi Tweet Source Frequency')
 axM.set_xlabel('Tweet Source')
 axM.set_ylabel('Frequency')
+add_value_labels(axM)
 
 #plotting Ronaldo
 figureR, axR = plt.subplots()
@@ -53,6 +100,7 @@ axR.bar(list(ronaldo_tweet_source.keys()), list(ronaldo_tweet_source.values()),w
 figureR.suptitle('Ronaldo Tweet Source Frequency')
 axR.set_xlabel('Tweet Source')
 axR.set_ylabel('Frequency')
+add_value_labels(axR)
 
 
 #plotting Neymer
@@ -61,6 +109,7 @@ axN.bar(list(neymer_tweet_source.keys()), list(neymer_tweet_source.values()),wid
 figureN.suptitle('Neymer Tweet Source Frequency')
 axN.set_xlabel('Tweet Source')
 axN.set_ylabel('Frequency')
+add_value_labels(axN)
 
 
 
